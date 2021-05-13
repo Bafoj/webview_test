@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css?v=7.*" type="text/css">
+
+  <script language="JavaScript" src="https://developer.api.autodesk.com/modelderivative/v2/viewers/viewer3D.min.js?v=7.*"></script>
+</head>
+<style>
+    /** Just simple CSS styling to make this page a little nicer **/
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div></div>
+<script>
+    var goh;
+    var view;
+    Autodesk.Viewing.Initializer({env:"Local"},function(){ 
+        view = new Autodesk.Viewing.Private.GuiViewer3D( document.getElementsByTagName('div')[0]);
+        view.start('model/X-Wing/star-wars-x-wing.obj.svf');
+        view.loadExtension("Autodesk.GoHome").then((gohome) => {
+            goh = gohome;
+        });
+    });
+    function home() {
+        //Autodesk.Extensions.GoHome.activate();
+
+        goh.activate();
+    }
+</script>
+</body>
+</html>

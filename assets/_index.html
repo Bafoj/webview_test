@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <script type="text/javascript">
+        var value= 0;
+        
+        function add(num1) {
+            value+=num1;
+            document.getElementById("result").innerHTML
+                = "Total: "+value;
+            messageHandler.postMessage(value);
+        }
+    </script>
+</head>
+<body>
+    <p>Hello from Flutter</p>
+    <p id="result">Total: 0</p>
+</body>
+</html>
